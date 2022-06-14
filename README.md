@@ -10,7 +10,7 @@
 ```
 usage: main.py [-h] [--source_path SOURCE_PATH] [--target_path TARGET_PATH] --decode_type DECODE_TYPE
 
-ZendDecode
+Zend_Decode
 
 options:
   -h, --help            show this help message and exit

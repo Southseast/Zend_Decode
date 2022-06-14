@@ -74,7 +74,7 @@ class ZendDecode:
 
 if __name__ == '__main__':
     prefix_path = os.getcwd() + "/"
-    parser = argparse.ArgumentParser(description='ZendDecode')
+    parser = argparse.ArgumentParser(description='Zend_Decode')
     parser.add_argument('--source_path', '-s', help='源码读取路径，若无指定则读取source', default=prefix_path + "source/")
     parser.add_argument('--target_path', '-t', help='解码保存路径，若无指定则输出到target', default=prefix_path + "target/")
     parser.add_argument('--decode_type', '-d', help='解码格式，必要参数，可选为52RM/52NM/53/54', required=True)
