@@ -2,7 +2,7 @@
 **G-DeZender**要付费才能批量，**SeayDzend**解**5.2NM**返回的是**No input file specified**。  
 于是反编译**G-DeZender**，发现也就是调用**lib**包，于是改了一个能使的。  
 目前只于**Windows11 ARM**环境下测试了某**OA**的**5.2NM**解密。  
-## 理论上支持的解密版本
+## Versions
 - **Zend/PHP5.2【Windows11 ARM下测试可用】**  
 - **Zend/PHP5.3【未测试】**  
 - **Zend/PHP5.4【未测试】**  
@@ -35,3 +35,5 @@ python .\main.py -d 52NM -t C:\Users\MeiyaPico\Desktop\target
 # 指定源码路径、输出路径和解密方式
 python .\main.py -d 52NM -s C:\Users\MeiyaPico\Desktop\source -t C:\Users\MeiyaPico\Desktop\target
 ```
+## Screenshot
+![img.png](img.png)
