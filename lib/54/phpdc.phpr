@@ -1,0 +1,37 @@
+#! /usr/bin/php -dopen_basedir=
+<?php
+
+$srcdir = dirname(__FILE__);
+require_once("$srcdir/Decompiler.class.php");
+if (file_exists("$srcdir/phpdc.debug.php")) {
+	include("$srcdir/phpdc.debug.php");
+}
+
+if (!isset($argv)) {
+	$argv = $_SERVER['argv'];
+	$argc = $_SERVER['argc'];
+}
+
+$dc = new Decompiler();
+if (isset($argv[2])) {
+	eval('$dc->decompileDasm(' . file_get_contents($argv[2]) . ');');
+}
+else if (isset($argv[1])) {
+	if ($dc->decompileFile($argv[1]) === false) {
+		exit(2);
+	}
+}
+else {
+	$phpcode = '';
+	if (!defined('stdin')) {
+		define('stdin', fopen('php://stdin', 'rb'));
+	}
+	while (!feof(stdin)) {
+		$phpcode .= fgets(stdin);
+	}
+	if ($dc->decompileString($phpcode) === false) {
+		exit(2);
+	}
+}
+$dc->output();
+
